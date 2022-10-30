@@ -21,8 +21,9 @@
 <link rel="stylesheet" href="/css/loading.min.css">
 <link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-y/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css"/>
 
-  
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
 <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
 
   <script>
@@ -212,17 +213,13 @@
         </p>
         <hr>
 	   <!-- 评论系统 -->
-		<div id="tcomment"></div>
-		<script src="https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js"></script>
-		<script>
-		twikoo.init({
-		  envId: '您的环境id', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
-		  el: '#tcomment', // 容器元素
-		  // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
-		  // path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
-		  // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/client/utils/i18n/index.js
-		})
-		</script>
+		<div id="waline"></div>
+		  <script>
+			Waline.init({
+			  el: '#waline',
+			  serverURL: 'https://waline.arsn.cn/',
+			});
+		  </script>
       </div>
       <!-- 悬浮窗 -->
       <div class="wapnone fk_service">
